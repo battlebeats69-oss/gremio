@@ -95,7 +95,14 @@ En las cookies propias guardo datos no sensibles del navegador: el tema elegido 
 
 ---
 
-## 10. Pruebas realizadas
+## 10. Uso de IA
+
+Se ha utilizado inteligencia artificial como herramienta de apoyo en determinados procesos del proyecto, incluyendo la revisión del funcionamiento, la detección de posibles mejoras y la generación y estructuración de la documentación. Su uso ha servido como complemento al trabajo realizado, manteniendo la supervisión y validación humana de los resultados.
+
+---
+
+
+## 11. Pruebas realizadas
 
 | Prueba | Resultado esperado | Resultado obtenido |
 |---|---|---|
