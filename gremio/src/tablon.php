@@ -21,6 +21,24 @@ $_SESSION['zurron'] ??= [];
 // TODO (Parte 3): suma 1 a $_SESSION['visitas'] en cada carga del tablón.
 $_SESSION['visitas'] = ($_SESSION['visitas'] ?? 0) + 1;
 
+// ---- POST: aceptar una misión --------------------------------------------
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id     = $_POST['id'] ?? '';
+    $mision = buscarMision($misiones, $id);
+
+    if ($mision === null) {
+        mensajeFlash('Esa misión no existe en el tablón.');
+    } elseif (in_array($id, $_SESSION['zurron'], true)) {
+        mensajeFlash('Ya tienes esa misión en el zurrón.');
+    } else {
+        $_SESSION['zurron'][] = $id;
+        mensajeFlash('Misión «' . $mision['titulo'] . '» añadida al zurrón.');
+    }
+
+    header('Location: tablon.php');
+    exit;
+}
+
 // ---- GET: filtros ---------------------------------------------------------
 $rango     = leerRangoFiltro($_GET);
 $oroMinimo = leerOroMinimo($_GET);
